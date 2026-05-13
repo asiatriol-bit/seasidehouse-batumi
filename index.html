@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEASIDE HOUSE — Роскошная вилла в Батуми | $650 000</title>
-<meta name="description" content="Готовая меблированная вилла 292 м² с панорамным видом на море и горы в Батуми. Бассейн, сауна, Smart Home. 10 минут до центра. $650 000.">
+<title>Seaside House — Роскошная вилла в Батуми</title>
+<meta name="description" content="Готовая меблированная вилла 292 м² с панорамным видом на море и горы в Батуми. Бассейн, Smart Home, тёплый пол. 10 минут до центра.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root {
   --gold: #C9A84C;
@@ -21,14 +21,14 @@
   --text-muted: #9a9a9a;
   --text-dim: #555555;
   --radius: 4px;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Cormorant Garamond', Georgia, serif;
   --max: 1200px;
   --section-gap: clamp(80px, 10vw, 140px);
 }
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--black); color: var(--text); font-family: var(--font-sans); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+body { background: var(--black); color: var(--text); font-family: var(--font-serif); font-size: 18px; line-height: 1.6; overflow-x: hidden; }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 
@@ -285,8 +285,13 @@ h3 { font-size: clamp(20px, 2.5vw, 30px); }
   transition: background 0.25s;
 }
 .spec-item:hover { background: var(--card); }
+.spec-item.spec-highlight { background: linear-gradient(135deg, #1a0a00, #2a1400); border: 1px solid var(--gold); }
+.spec-item.spec-highlight:hover { background: linear-gradient(135deg, #220d00, #331800); }
+.spec-item.spec-highlight .spec-value { color: #FFD166; }
+.spec-item.spec-highlight .spec-sub { display: block; font-size: 13px; color: #fff; margin-top: 6px; font-weight: 600; }
 .spec-icon { font-size: 28px; margin-bottom: 12px; }
 .spec-value { font-family: var(--font-serif); font-size: 28px; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+.spec-sub { display: none; }
 .spec-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.12em; }
 .specs-note {
   margin-top: 40px; padding: 24px 32px;
@@ -591,7 +596,7 @@ footer p { font-size: 13px; color: var(--text-dim); }
 <header id="header">
   <div class="container">
     <div class="header-inner">
-      <div class="logo">SEASIDE<span>.</span>HOUSE</div>
+      <div class="logo">seaside<span>house</span>.ge</div>
       <nav class="header-nav">
         <a href="#gallery">Галерея</a>
         <a href="#specs">Характеристики</a>
@@ -612,10 +617,10 @@ footer p { font-size: 13px; color: var(--text-dim); }
   <div class="hero-content">
     <div class="hero-eyebrow">Батуми, Грузия · Ахалшенис Меурнеоба</div>
     <h1 class="hero-title" data-pretext>
-      Ваша семья заслуживает<br>
-      <em>дома</em>, а не очередного отеля
+      Море. Горы.<br>
+      <em>Ваш дом.</em>
     </h1>
-    <p class="hero-sub">Готовая меблированная вилла 292 м² с панорамным видом на море и горы. Бассейн, сауна, Smart Home. 10 минут до центра Батуми.</p>
+    <p class="hero-sub">Готовая меблированная вилла 292 м² с панорамным видом на море и горы. Бассейн, Smart Home, тёплый пол. 10 минут до центра Батуми.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn">Запросить персональный просмотр</a>
       <a href="#gallery" class="btn btn-outline">Смотреть галерею</a>
@@ -628,15 +633,15 @@ footer p { font-size: 13px; color: var(--text-dim); }
   <div class="hero-stats">
     <div class="hero-stat">
       <div class="hero-stat-num">292 м²</div>
-      <div class="hero-stat-label">Площадь</div>
+      <div class="hero-stat-label">Площадь дома</div>
     </div>
     <div class="hero-stat">
-      <div class="hero-stat-num">$650K</div>
-      <div class="hero-stat-label">Стоимость</div>
+      <div class="hero-stat-num">400 м²</div>
+      <div class="hero-stat-label">Площадь участка</div>
     </div>
     <div class="hero-stat">
-      <div class="hero-stat-num">2024</div>
-      <div class="hero-stat-label">Год</div>
+      <div class="hero-stat-num">4</div>
+      <div class="hero-stat-label">Жилых уровня</div>
     </div>
     <div class="hero-stat">
       <div class="hero-stat-num">10 мин</div>
@@ -683,8 +688,8 @@ footer p { font-size: 13px; color: var(--text-dim); }
       <div class="solution-visual reveal">
         <img class="solution-img-main" src="assets/photos/IMG_9458.JPG" alt="Вилла в Батуми — вид на море" loading="lazy">
         <div class="solution-badge">
-          <div class="solution-badge-num">2024</div>
-          <div class="solution-badge-text">Новострой</div>
+          <div class="solution-badge-num">292</div>
+          <div class="solution-badge-text">м² готово к жизни</div>
         </div>
       </div>
       <div class="solution-text reveal reveal-delay-1">
@@ -802,12 +807,17 @@ footer p { font-size: 13px; color: var(--text-dim); }
       <div class="spec-item">
         <div class="spec-icon">📐</div>
         <div class="spec-value">292 м²</div>
-        <div class="spec-label">Общая площадь</div>
+        <div class="spec-label">Площадь дома</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-icon">🌿</div>
+        <div class="spec-value">400 м²</div>
+        <div class="spec-label">Площадь участка</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon">🏠</div>
         <div class="spec-value">4</div>
-        <div class="spec-label">Уровня жилых</div>
+        <div class="spec-label">Жилых уровня</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon">🛏</div>
@@ -822,36 +832,27 @@ footer p { font-size: 13px; color: var(--text-dim); }
       <div class="spec-item">
         <div class="spec-icon">🏊</div>
         <div class="spec-value">Бассейн</div>
-        <div class="spec-label">С фильтрацией</div>
-      </div>
-      <div class="spec-item">
-        <div class="spec-icon">🔥</div>
-        <div class="spec-value">Сауна</div>
-        <div class="spec-label">Электрическая</div>
+        <div class="spec-label">Собственный</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon">📱</div>
         <div class="spec-value">Smart Home</div>
         <div class="spec-label">Климат, охрана, CCTV</div>
       </div>
-      <div class="spec-item">
+      <div class="spec-item spec-highlight">
         <div class="spec-icon">🅿️</div>
-        <div class="spec-value">3 авто</div>
-        <div class="spec-label">Парковка</div>
+        <div class="spec-value">Парковка</div>
+        <div class="spec-sub">на три авто</div>
+        <div class="spec-label">Закрытая, своя</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon">🌡️</div>
         <div class="spec-value">Тёплый пол</div>
-        <div class="spec-label">Редкость в Батуми</div>
-      </div>
-      <div class="spec-item">
-        <div class="spec-icon">📅</div>
-        <div class="spec-value">2024</div>
-        <div class="spec-label">Год постройки</div>
+        <div class="spec-label">Газовый котёл 32 кВт</div>
       </div>
     </div>
     <div class="specs-note reveal">
-      <strong>Полностью меблирована и готова к заселению.</strong> В доме никто никогда не жил. Авторский дизайн-проект, техника Midea, травертиновый фасад, автоматические ворота, резервный накопитель воды 500 л. Ничего не нужно докупать.
+      <strong>Полностью меблирована и готова к заселению.</strong> В доме никто никогда не жил. Авторский дизайн-проект, техника Miele, травертиновый фасад, автоматические ворота, резервный накопитель воды 500 л. Ничего не нужно докупать.
     </div>
   </div>
 </section>
@@ -864,7 +865,7 @@ footer p { font-size: 13px; color: var(--text-dim); }
         <div class="gold-line"></div>
         <span class="section-label">Локация</span>
         <h2 class="section-title">10 минут до центра.<br>Без пробок.</h2>
-        <p class="section-sub" style="margin-bottom:32px;">Ахалшенис Меурнеоба — возвышенный экологически чистый район Батуми. Высота гарантирует открытую панораму. Дорога до центра не перегружена даже в разгар сезона.</p>
+        <p class="section-sub" style="margin-bottom:32px;">Батуми Ривьера — возвышенный экологически чистый район над морем. Вид на море, вид на горы. Высота гарантирует открытую панораму. Дорога до центра не перегружена даже в разгар сезона.</p>
         <div class="location-points">
           <div class="location-point">
             <div class="location-point-icon">🏙️</div>
@@ -910,7 +911,7 @@ footer p { font-size: 13px; color: var(--text-dim); }
     <div class="panorama-side">
       <img src="assets/photos/IMG_9482.JPG" alt="Панорамный вид на море из виллы Батуми" loading="lazy">
       <div class="panorama-caption">
-        <h3>Вид на море</h3>
+        <h3>Потрясающий вид на старый город Батуми</h3>
         <p>Черноморское побережье — со всех этажей</p>
       </div>
     </div>
@@ -918,12 +919,12 @@ footer p { font-size: 13px; color: var(--text-dim); }
       <img src="assets/photos/photo_2024-10-30_17.25.40.jpeg" alt="Панорамный вид на горы из виллы Батуми" loading="lazy">
       <div class="panorama-caption">
         <h3>Вид на горы</h3>
-        <p>Кавказский хребет — за окном</p>
+        <p>Кавказский хребет — за окном каждый день</p>
       </div>
     </div>
   </div>
   <div class="panorama-center">
-    <div class="panorama-center-text">Такое сочетание в Батуми — редкость</div>
+    <div class="panorama-center-text">Море и горы одновременно</div>
   </div>
   <div style="text-align:center; padding: 32px 20px; background: var(--black);">
     <p style="font-family:var(--font-serif); font-size:clamp(16px,2vw,22px); color:var(--text-muted); font-style:italic; max-width:600px; margin:0 auto;">
@@ -938,22 +939,22 @@ footer p { font-size: 13px; color: var(--text-dim); }
     <div class="investment-header reveal">
       <div class="gold-line" style="margin:0 auto 16px;"></div>
       <span class="section-label">Инвестиционная логика</span>
-      <h2 class="section-title">Вилла или 3 квартиры?<br>Давайте сравним честно</h2>
+      <h2 class="section-title">Вилла или квартира?<br>Давайте сравним честно</h2>
     </div>
     <div class="reveal" style="overflow-x:auto;">
       <table class="comparison-table">
         <thead>
           <tr>
             <th style="width:200px;">Параметр</th>
-            <th class="highlight">Эта вилла ($650K)</th>
-            <th>3 квартиры в Батуми</th>
+            <th class="highlight">Эта вилла</th>
+            <th>Трёхкомнатная квартира в Москве</th>
             <th>Апартаменты в отеле</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Уникальность</td>
-            <td class="highlight"><span class="check">✓</span> Единственная в районе</td>
+            <td class="highlight"><span class="check">✓</span> Авторский объект, один</td>
             <td class="muted-col"><span class="cross">—</span> Таких тысячи</td>
             <td class="muted-col"><span class="cross">—</span> Типовые номера</td>
           </tr>
@@ -965,7 +966,7 @@ footer p { font-size: 13px; color: var(--text-dim); }
           </tr>
           <tr>
             <td>Семья живёт</td>
-            <td class="highlight"><span class="check">✓</span> Бассейн, сад, сауна</td>
+            <td class="highlight"><span class="check">✓</span> Бассейн, сад, 400 м² участок</td>
             <td class="muted-col"><span class="cross">—</span> Квартира без участка</td>
             <td class="muted-col"><span class="cross">—</span> Только отдых</td>
           </tr>
@@ -1004,16 +1005,16 @@ footer p { font-size: 13px; color: var(--text-dim); }
     </div>
     <div class="investment-conclusion reveal">
       <div>
-        <div class="inv-metric">$650K</div>
+        <div class="inv-metric">292 м²</div>
         <div class="inv-label">Уникальный объект без аналогов</div>
       </div>
       <div>
-        <div class="inv-metric">2024</div>
-        <div class="inv-label">Новострой — без вложений в ремонт</div>
+        <div class="inv-metric">Новострой</div>
+        <div class="inv-label">Без вложений в ремонт</div>
       </div>
       <div>
-        <div class="inv-metric">Торг</div>
-        <div class="inv-label">Условия и форма оплаты обсуждаются</div>
+        <div class="inv-metric">1 день</div>
+        <div class="inv-label">Сделка закрывается и регистрируется</div>
       </div>
     </div>
   </div>
@@ -1026,7 +1027,7 @@ footer p { font-size: 13px; color: var(--text-dim); }
       <div class="reveal">
         <div class="gold-line"></div>
         <span class="section-label">Редкость объекта</span>
-        <h2 class="section-title" style="margin-bottom:36px;">Аналогов этой виллы<br>в Батуми нет</h2>
+        <h2 class="section-title" style="margin-bottom:36px;">Что делает эту виллу<br>исключительной</h2>
         <ul class="rarity-list">
           <li>
             <div class="rarity-mark">1</div>
@@ -1084,18 +1085,6 @@ footer p { font-size: 13px; color: var(--text-dim); }
 
       <div class="acc-item">
         <button class="acc-trigger" onclick="toggleAcc(this)">
-          <span>«$650 000 — это дорого для Грузии»</span>
-          <div class="acc-icon">+</div>
-        </button>
-        <div class="acc-body">
-          <div class="acc-body-inner">
-            Дорого — это квартира за $650K. Но здесь не квартира. Здесь <strong>готовая вилла с бассейном, сауной, Smart Home, тёплым полом, авторским дизайном, травертиновым фасадом и панорамным видом на море и горы</strong> — полностью меблированная, никто не жил. Найдите аналог за эту цену в Батуми. Его нет.
-          </div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-trigger" onclick="toggleAcc(this)">
           <span>«Я не знаю, насколько это юридически безопасно»</span>
           <div class="acc-icon">+</div>
         </button>
@@ -1113,19 +1102,7 @@ footer p { font-size: 13px; color: var(--text-dim); }
         </button>
         <div class="acc-body">
           <div class="acc-body-inner">
-            Smart Home решает 80% вопросов удалённо — климат, охрана, CCTV. <strong>Управление через смартфон из любой точки мира</strong>. Для физического обслуживания (бассейн, сад, уборка) можно подключить местный сервис. Автоматические ворота, сигнализация, видеонаблюдение — всё уже установлено.
-          </div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-trigger" onclick="toggleAcc(this)">
-          <span>«Батуми — это только летний город»</span>
-          <div class="acc-icon">+</div>
-        </button>
-        <div class="acc-body">
-          <div class="acc-body-inner">
-            Батуми активен круглый год. Горы — 40 минут. Казино, рестораны, бизнес-центры работают 12 месяцев. <strong>Туристический поток вырос на 35% за последние 2 года</strong>, в том числе зимой. Вилла с тёплым полом и бассейном (который можно отапливать) — не сезонный объект, а место для жизни.
+            Smart Home решает 80% вопросов удалённо — климат, охрана, CCTV. <strong>Управление через смартфон из любой точки мира</strong>. Для физического обслуживания мы предлагаем <strong>сервис управления виллой</strong>: персональный сотрудник, регулярная чистка бассейна, круглосуточное видеонаблюдение. Автоматические ворота, сигнализация, CCTV — всё уже установлено.
           </div>
         </div>
       </div>
@@ -1137,7 +1114,7 @@ footer p { font-size: 13px; color: var(--text-dim); }
         </button>
         <div class="acc-body">
           <div class="acc-body-inner">
-            Это нормально. Но «подумать» — это не «медлить». <strong>Мы предлагаем конкретный следующий шаг: персональный просмотр без давления и обязательств</strong>. Приедьте, посмотрите, задайте все вопросы. Мы покажем документы, посчитаем сценарии, проведём по каждому уголку. Решение останется за вами. А хорошие объекты не ждут.
+            Это нормально. Но «подумать» — это не «медлить». <strong>Мы предлагаем конкретный следующий шаг: персональный просмотр без давления и обязательств</strong>. Приедьте, посмотрите, задайте все вопросы. Мы покажем документы, посчитаем сценарии, проведём по каждому уголку. <strong>Сделка закрывается в один день и регистрируется в реестре Грузии.</strong> Решение — за вами. А хорошие объекты не ждут.
           </div>
         </div>
       </div>
@@ -1177,10 +1154,10 @@ footer p { font-size: 13px; color: var(--text-dim); }
             </div>
           </div>
           <div class="trust-item">
-            <div class="trust-icon">💬</div>
+            <div class="trust-icon">⚡</div>
             <div>
-              <h4>Гибкие условия оплаты</h4>
-              <p>Форма и условия оплаты обсуждаются. Готовы к конструктивному диалогу.</p>
+              <h4>Сделка закрывается в один день</h4>
+              <p>Право собственности переходит в день оплаты и регистрируется в реестре Грузии немедленно.</p>
             </div>
           </div>
         </div>
@@ -1299,7 +1276,7 @@ footer p { font-size: 13px; color: var(--text-dim); }
     <div class="gold-line reveal" style="margin:0 auto 16px;"></div>
     <span class="section-label reveal">Не откладывайте</span>
     <h2 class="section-title reveal">Пока вы читаете это —<br>кто-то уже смотрит виллу</h2>
-    <p class="fomo-sub reveal">Аналогов этого объекта в Батуми нет. Когда он уйдёт — второго не будет. Хорошие решения принимают без спешки, но и без затяжного промедления.</p>
+    <p class="fomo-sub reveal">Вилла такого уровня — штучный объект. Когда она уйдёт — второй не будет. Хорошие решения принимают без спешки, но и без затяжного промедления.</p>
     <div class="fomo-counter reveal">
       <div class="fomo-stat">
         <div class="fomo-num">1</div>
@@ -1389,7 +1366,7 @@ footer p { font-size: 13px; color: var(--text-dim); }
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="container">
-    <div class="logo">SEASIDE<span style="color:var(--gold)">.</span>HOUSE</div>
+    <div class="logo">seaside<span style="color:var(--gold)">house</span>.ge</div>
     <p style="margin-top:12px;">Роскошная вилла в Батуми, Грузия · seasidehouse.ge</p>
     <p style="margin-top:8px;">3-я улица, Ахалшенис Меурнеоба, Хелвачаурский муниципалитет, Аджария</p>
   </div>
