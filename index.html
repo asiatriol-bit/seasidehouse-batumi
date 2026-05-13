@@ -474,9 +474,9 @@ h3 { font-size: clamp(20px, 2.5vw, 30px); }
 ═══════════════════════════════════════ */
 #tour { background: var(--black); }
 .tour-header { text-align: center; margin-bottom: 56px; }
-.tour-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
-@media(max-width:768px) { .tour-grid { grid-template-columns: 1fr 1fr; } }
-@media(max-width:480px) { .tour-grid { grid-template-columns: 1fr; } }
+.tour-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 3px; }
+@media(max-width:900px) { .tour-grid { grid-template-columns: repeat(3,1fr); } }
+@media(max-width:600px) { .tour-grid { grid-template-columns: 1fr 1fr; } }
 .tour-item { position: relative; overflow: hidden; cursor: pointer; }
 .tour-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 0.6s ease; }
 .tour-item:hover .tour-img { transform: scale(1.06); }
@@ -1235,35 +1235,47 @@ footer p { font-size: 13px; color: var(--text-dim); }
       <div class="tour-overlay"><span class="tour-label">Гостиная</span></div>
     </div>
     <div class="tour-item">
-      <img class="tour-img" src="assets/photos/swimming-pool.JPG" alt="Бассейн" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Бассейн</span></div>
-    </div>
-    <div class="tour-item">
-      <img class="tour-img" src="assets/photos/kitchen2.JPG" alt="Кухня" loading="lazy">
+      <img class="tour-img" src="assets/photos/kitchen.JPG" alt="Кухня" loading="lazy">
       <div class="tour-overlay"><span class="tour-label">Кухня</span></div>
     </div>
     <div class="tour-item">
-      <img class="tour-img" src="assets/photos/master-bedroom2.JPG" alt="Спальня" loading="lazy">
+      <img class="tour-img" src="assets/photos/master-bedroom.JPG" alt="Главная спальня" loading="lazy">
       <div class="tour-overlay"><span class="tour-label">Главная спальня</span></div>
+    </div>
+    <div class="tour-item">
+      <img class="tour-img" src="assets/photos/guest-room2.JPG" alt="Гостевая комната" loading="lazy">
+      <div class="tour-overlay"><span class="tour-label">Гостевая комната</span></div>
+    </div>
+    <div class="tour-item">
+      <img class="tour-img" src="assets/photos/office.JPG" alt="Кабинет" loading="lazy">
+      <div class="tour-overlay"><span class="tour-label">Кабинет</span></div>
+    </div>
+    <div class="tour-item">
+      <img class="tour-img" src="assets/photos/staircase-house.JPG" alt="Лестница" loading="lazy">
+      <div class="tour-overlay"><span class="tour-label">Лестница</span></div>
+    </div>
+    <div class="tour-item">
+      <img class="tour-img" src="assets/photos/swimming-pool.JPG" alt="Бассейн" loading="lazy">
+      <div class="tour-overlay"><span class="tour-label">Бассейн</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/jacuzzi.jpeg" alt="Джакузи" loading="lazy">
       <div class="tour-overlay"><span class="tour-label">Джакузи</span></div>
     </div>
     <div class="tour-item">
-      <img class="tour-img" src="assets/photos/view-from-the-fourth-floor.JPG" alt="Терраса" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Вид с 4-го этажа</span></div>
+      <img class="tour-img" src="assets/photos/view-from-the-fourth-floor.JPG" alt="Вид из дома" loading="lazy">
+      <div class="tour-overlay"><span class="tour-label">Вид из дома</span></div>
+    </div>
+    <div class="tour-item">
+      <img class="tour-img" src="assets/photos/House-View-from-the-yard2.JPG" alt="Двор" loading="lazy">
+      <div class="tour-overlay"><span class="tour-label">Двор</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/House-View-from-the-street.JPG" alt="Фасад" loading="lazy">
       <div class="tour-overlay"><span class="tour-label">Фасад из травертина</span></div>
     </div>
     <div class="tour-item">
-      <img class="tour-img" src="assets/photos/House-View-from-the-yard.JPG" alt="Двор" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Участок / Двор</span></div>
-    </div>
-    <div class="tour-item">
-      <img class="tour-img" src="assets/photos/best-night-view.jpeg" alt="Вид ночью" loading="lazy">
+      <img class="tour-img" src="assets/photos/best-night-view.jpeg" alt="Ночная панорама" loading="lazy">
       <div class="tour-overlay"><span class="tour-label">Ночная панорама</span></div>
     </div>
   </div>
