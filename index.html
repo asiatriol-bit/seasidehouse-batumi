@@ -751,6 +751,24 @@ footer p { font-size: 13px; color: var(--text-dim); }
 }
 
 /* ═══════════════════════════════════════
+   LANG SWITCHER
+═══════════════════════════════════════ */
+.lang-switch {
+  display: flex; align-items: center; gap: 2px;
+  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+  border-radius: 3px; padding: 4px; flex-shrink: 0;
+}
+.lang-btn {
+  font-family: var(--font-sans); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; color: var(--text-muted);
+  background: none; border: none; cursor: pointer;
+  padding: 4px 8px; border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+.lang-btn.active { background: var(--gold); color: #000; }
+.lang-btn:hover:not(.active) { color: var(--text); }
+
+/* ═══════════════════════════════════════
    UTILITIES
 ═══════════════════════════════════════ */
 @media(prefers-reduced-motion:reduce) {
@@ -772,13 +790,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="header-inner">
       <div class="logo">seaside<span>house</span>.ge</div>
       <nav class="header-nav">
-        <a href="#gallery">Галерея</a>
-        <a href="#specs">Характеристики</a>
-        <a href="#investment">Инвестиция</a>
-        <a href="#contact">Контакт</a>
+        <a href="#gallery" data-i18n="nav_gallery">Галерея</a>
+        <a href="#specs" data-i18n="nav_specs">Характеристики</a>
+        <a href="#investment" data-i18n="nav_invest">Инвестиция</a>
+        <a href="#contact" data-i18n="nav_contact">Контакт</a>
       </nav>
       <a href="tel:+995599005643" class="header-phone">+995 599 005 643</a>
-      <a href="#contact" class="btn header-cta">Запросить просмотр</a>
+      <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#contact" class="btn header-cta" data-i18n="header_cta">Запросить просмотр</a>
     </div>
   </div>
 </header>
@@ -790,38 +812,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="owner-badge">★ Продаёт собственник · Без посредников</div>
-    <div class="hero-eyebrow">Батуми, Грузия · Батуми Ривьера</div>
-    <h1 class="hero-title" data-pretext>
-      Море. Горы.<br>
-      <em>Ваш дом.</em>
-    </h1>
-    <p class="hero-sub">Готовая меблированная вилла 292 м² с панорамным видом на море и горы. Бассейн, Smart Home, тёплый пол. 10 минут до центра Батуми.</p>
+    <div class="owner-badge" data-i18n="hero_badge">★ Продаёт собственник · Без посредников</div>
+    <div class="hero-eyebrow" data-i18n="hero_eyebrow">Батуми, Грузия · Батуми Ривьера</div>
+    <h1 class="hero-title" data-pretext data-i18n="hero_title">Море. Горы.<br><em>Ваш дом.</em></h1>
+    <p class="hero-sub" data-i18n="hero_sub">Готовая меблированная вилла 292 м² с панорамным видом на море и горы. Бассейн, Smart Home, тёплый пол. 10 минут до центра Батуми.</p>
     <div class="hero-actions">
-      <a href="#gallery" class="btn">Смотреть виллу</a>
-      <a href="#contact" class="btn btn-outline">Написать владельцу</a>
+      <a href="#gallery" class="btn" data-i18n="hero_btn1">Смотреть виллу</a>
+      <a href="#contact" class="btn btn-outline" data-i18n="hero_btn2">Написать владельцу</a>
     </div>
   </div>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
-    <span>Смотреть</span>
+    <span data-i18n="scroll">Смотреть</span>
   </div>
   <div class="hero-stats">
     <div class="hero-stat">
       <div class="hero-stat-num">292 м²</div>
-      <div class="hero-stat-label">Площадь дома</div>
+      <div class="hero-stat-label" data-i18n="stat_area">Площадь дома</div>
     </div>
     <div class="hero-stat">
       <div class="hero-stat-num">400 м²</div>
-      <div class="hero-stat-label">Площадь участка</div>
+      <div class="hero-stat-label" data-i18n="stat_plot">Площадь участка</div>
     </div>
     <div class="hero-stat">
       <div class="hero-stat-num">4</div>
-      <div class="hero-stat-label">Жилых уровня</div>
+      <div class="hero-stat-label" data-i18n="stat_floors">Жилых уровня</div>
     </div>
     <div class="hero-stat">
       <div class="hero-stat-num">10 мин</div>
-      <div class="hero-stat-label">До центра</div>
+      <div class="hero-stat-label" data-i18n="stat_city">До центра</div>
     </div>
   </div>
 </section>
@@ -831,27 +850,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="pain-intro reveal">
       <div class="gold-line"></div>
-      <span class="section-label">Честный разговор</span>
-      <h2 class="section-title">Бизнес есть. Деньги есть.<br>Но всё ли у вас достаточно защищено?</h2>
+      <span class="section-label" data-i18n="pain_label">Честный разговор</span>
+      <h2 class="section-title" data-i18n="pain_title">Бизнес есть. Деньги есть.<br>Но всё ли у вас достаточно защищено?</h2>
     </div>
     <div class="pain-grid">
       <div class="pain-card reveal reveal-delay-1">
         <div class="pain-num">01</div>
-        <h3>Капитал и семья — в одной стране</h3>
-        <p>Бизнес, деньги, семья — всё завязано на одну экономику, один курс валют, один сценарий. Это тревожит, даже если вслух не признавать.</p>
+        <h3 data-i18n="pain1_h">Капитал и семья — в одной стране</h3>
+        <p data-i18n="pain1_p">Бизнес, деньги, семья — всё завязано на одну экономику, один курс валют, один сценарий. Это тревожит, даже если вслух не признавать.</p>
       </div>
       <div class="pain-card reveal reveal-delay-2">
         <div class="pain-num">02</div>
-        <h3>Жена спрашивает: «А мы когда?»</h3>
-        <p>Вы успешны. Но каждый отпуск — чужая вилла. Семья хочет своё место. Место, куда можно приехать и выдохнуть, а не оформлять аренду.</p>
+        <h3 data-i18n="pain2_h">Жена спрашивает: «А мы когда?»</h3>
+        <p data-i18n="pain2_p">Вы успешны. Но каждый отпуск — чужая вилла. Семья хочет своё место. Место, куда можно приехать и выдохнуть, а не оформлять аренду.</p>
       </div>
       <div class="pain-card reveal reveal-delay-3">
         <div class="pain-num">03</div>
-        <h3>Хороший объект уходит быстро</h3>
-        <p>Вы видели, как другие купили раньше и выиграли. Вы думали. Потом оказывалось — тот объект уже давно ушёл. Снова «подождём».</p>
+        <h3 data-i18n="pain3_h">Хороший объект уходит быстро</h3>
+        <p data-i18n="pain3_p">Вы видели, как другие купили раньше и выиграли. Вы думали. Потом оказывалось — тот объект уже давно ушёл. Снова «подождём».</p>
       </div>
     </div>
-    <blockquote class="pain-quote reveal">
+    <blockquote class="pain-quote reveal" data-i18n="pain_quote">
       «Я уже заработал. Теперь хочу не просто квартиру, а место, где моя семья будет чувствовать себя спокойно, красиво и достойно.»
     </blockquote>
   </div>
@@ -865,22 +884,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <img class="solution-img-main" src="assets/photos/House-View-from-the-yard2.JPG" alt="Вилла в Батуми — вид на море" loading="lazy">
         <div class="solution-badge">
           <div class="solution-badge-num">292</div>
-          <div class="solution-badge-text">м² готово к жизни</div>
+          <div class="solution-badge-text" data-i18n="sol_badge">м² готово к жизни</div>
         </div>
       </div>
       <div class="solution-text reveal reveal-delay-1">
         <div class="gold-line"></div>
-        <span class="section-label">Решение</span>
-        <h2 class="section-title">Это не просто вилла.<br>Это ваш личный <em class="gold">план Б</em></h2>
-        <p class="section-sub">В нашем мире, где правила меняются, вилла у моря — это не роскошь. Это тихое, уверенное решение для тех, кто думает на 10 лет вперёд.</p>
+        <span class="section-label" data-i18n="sol_label">Решение</span>
+        <h2 class="section-title" data-i18n="sol_title">Это не просто вилла.<br>Это ваш личный <em class="gold">план Б</em></h2>
+        <p class="section-sub" data-i18n="sol_sub">В нашем мире, где правила меняются, вилла у моря — это не роскошь. Это тихое, уверенное решение для тех, кто думает на 10 лет вперёд.</p>
         <div class="solution-pillars">
           <div class="pillar">
             <div class="pillar-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
             </div>
             <div>
-              <h4>Семейное убежище</h4>
-              <p>Место, где жена гордится, а дети хотят приезжать снова.</p>
+              <h4 data-i18n="pil1_h">Семейное убежище</h4>
+              <p data-i18n="pil1_p">Место, где жена гордится, а дети хотят приезжать снова.</p>
             </div>
           </div>
           <div class="pillar">
@@ -888,8 +907,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
             </div>
             <div>
-              <h4>Безопасный актив</h4>
-              <p>Недвижимость в Грузии — спокойный актив. Надёжнее крипты, акций и кэша на счетах.</p>
+              <h4 data-i18n="pil2_h">Безопасный актив</h4>
+              <p data-i18n="pil2_p">Недвижимость в Грузии — спокойный актив. Надёжнее крипты, акций и кэша на счетах.</p>
             </div>
           </div>
           <div class="pillar">
@@ -897,8 +916,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
             <div>
-              <h4>Второй дом за границей</h4>
-              <p>Не номер в отеле. Не аренда. Своё место. С видом на море, бассейном и тишиной.</p>
+              <h4 data-i18n="pil3_h">Второй дом за границей</h4>
+              <p data-i18n="pil3_p">Не номер в отеле. Не аренда. Своё место. С видом на море, бассейном и тишиной.</p>
             </div>
           </div>
           <div class="pillar">
@@ -906,8 +925,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
             </div>
             <div>
-              <h4>Растущий рынок</h4>
-              <p>Батуми — один из самых быстрорастущих туристических рынков Европы. Цены идут вверх.</p>
+              <h4 data-i18n="pil4_h">Растущий рынок</h4>
+              <p data-i18n="pil4_p">Батуми — один из самых быстрорастущих туристических рынков Европы. Цены идут вверх.</p>
             </div>
           </div>
         </div>
@@ -921,8 +940,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="gallery-header reveal">
       <div class="gold-line" style="margin:0 auto 16px;"></div>
-      <span class="section-label">Фотогалерея</span>
-      <h2 class="section-title">Посмотрите на каждый<br>уголок этой виллы</h2>
+      <span class="section-label" data-i18n="gal_label">Фотогалерея</span>
+      <h2 class="section-title" data-i18n="gal_title">Посмотрите на каждый<br>уголок этой виллы</h2>
     </div>
   </div>
   <div class="gallery-grid reveal">
@@ -976,64 +995,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="specs-header reveal">
       <div class="gold-line" style="margin:0 auto 16px;"></div>
-      <span class="section-label">Характеристики</span>
-      <h2 class="section-title">Всё, что важно —<br>в одном объекте</h2>
+      <span class="section-label" data-i18n="specs_label">Характеристики</span>
+      <h2 class="section-title" data-i18n="specs_title">Всё, что важно —<br>в одном объекте</h2>
     </div>
     <div class="specs-grid reveal">
       <div class="spec-item">
         <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M3 9h18v10a2 2 0 01-2 2H5a2 2 0 01-2-2V9zm0-4h18v2H3V5zm6 8h2v4H9v-4zm4 0h2v4h-2v-4z"/></svg></div>
         <div class="spec-value">292 м²</div>
-        <div class="spec-label">Площадь дома</div>
+        <div class="spec-label" data-i18n="spec_area">Площадь дома</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M12 3C6.48 3 2 7.48 2 13c0 4.25 2.67 7.9 6.44 9.34L12 21l3.56 1.34C19.33 20.9 22 17.25 22 13c0-5.52-4.48-10-10-10zm-1 14H9v-2h2v2zm0-4H9V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
         <div class="spec-value">400 м²</div>
-        <div class="spec-label">Площадь участка</div>
+        <div class="spec-label" data-i18n="spec_plot">Площадь участка</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
         <div class="spec-value">4</div>
-        <div class="spec-label">Жилых уровня</div>
+        <div class="spec-label" data-i18n="spec_floors">Жилых уровня</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg></div>
         <div class="spec-value">5</div>
-        <div class="spec-label">Спален</div>
+        <div class="spec-label" data-i18n="spec_beds">Спален</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M9 4c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm10.5 9H19V9.5a3.5 3.5 0 00-7 0V13h-.46A6.48 6.48 0 018 17.5V19h8v-1.5A6.48 6.48 0 0119.46 13H19.5zM5 8H3v2H1v9h2v-1h18v1h2V10h-2V8h-2v2H5V8z"/></svg></div>
         <div class="spec-value">3</div>
-        <div class="spec-label">Санузла</div>
+        <div class="spec-label" data-i18n="spec_baths">Санузла</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M22 9V7h-2V5a2 2 0 00-2-2H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h14v14z"/><path d="M6 13h5v4H6zm7-6h3v3h-3zm-7 0h5v5H6z"/></svg></div>
         <div class="spec-value">Бассейн</div>
-        <div class="spec-label">Собственный</div>
+        <div class="spec-label" data-i18n="spec_pool_l">Собственный</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.59 5.35 4 6.85V21h2v-2.17A8.93 8.93 0 0012 19c1.41 0 2.75-.33 3.94-.91L16 19v2h2v-3.12c2.43-1.5 4-4.01 4-6.88 0-4.42-4.48-8-10-8zm-2 12H8v-2h2v2zm0-4H8V9h2v2zm4 4h-2v-2h2v2zm0-4h-2V9h2v2z"/></svg></div>
         <div class="spec-value">Сауна</div>
-        <div class="spec-label">Финская, собственная</div>
+        <div class="spec-label" data-i18n="spec_sauna_l">Финская, собственная</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div>
         <div class="spec-value">Smart Home</div>
-        <div class="spec-label">Климат, охрана, CCTV</div>
+        <div class="spec-label" data-i18n="spec_sh_l">Климат, охрана, CCTV</div>
       </div>
       <div class="spec-item spec-highlight">
         <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div>
         <div class="spec-value">Парковка</div>
-        <div class="spec-sub">на три авто</div>
-        <div class="spec-label">Закрытая, своя</div>
+        <div class="spec-sub" data-i18n="spec_park_sub">на три авто</div>
+        <div class="spec-label" data-i18n="spec_park_l">Закрытая, своя</div>
       </div>
       <div class="spec-item">
         <div class="spec-icon"><svg viewBox="0 0 24 24"><path d="M11 13H6l-3 3V4c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v9H11zm4 3v3l4.5 4.5L21 22v-6h-6z"/></svg></div>
         <div class="spec-value">Тёплый пол</div>
-        <div class="spec-label">Газовый котёл 32 кВт</div>
+        <div class="spec-label" data-i18n="spec_heat_l">Газовый котёл 32 кВт</div>
       </div>
     </div>
     <div class="specs-note reveal">
-      <strong>Полностью меблирована и готова к заселению.</strong> В доме никто никогда не жил. Авторский дизайн-проект, техника MIDEA, травертиновый фасад, автоматические ворота, резервный накопитель воды 500 л. Ничего не нужно докупать.
+      <span data-i18n="specs_note"><strong>Полностью меблирована и готова к заселению.</strong> В доме никто никогда не жил. Авторский дизайн-проект, техника MIDEA, травертиновый фасад, автоматические ворота, резервный накопитель воды 500 л. Ничего не нужно докупать.</span>
     </div>
   </div>
 </section>
@@ -1044,32 +1063,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="location-grid">
       <div class="reveal">
         <div class="gold-line"></div>
-        <span class="section-label">Локация</span>
-        <h2 class="section-title">10 минут до центра.<br>Без пробок.</h2>
-        <p class="section-sub" style="margin-bottom:32px;">Батуми Ривьера — возвышенный экологически чистый район над морем. Вид на море, вид на горы. Высота гарантирует открытую панораму. Дорога до центра не перегружена даже в разгар сезона.</p>
+        <span class="section-label" data-i18n="loc_label">Локация</span>
+        <h2 class="section-title" data-i18n="loc_title">10 минут до центра.<br>Без пробок.</h2>
+        <p class="section-sub" style="margin-bottom:32px;" data-i18n="loc_sub">Батуми Ривьера — возвышенный экологически чистый район над морем. Вид на море, вид на горы. Высота гарантирует открытую панораму. Дорога до центра не перегружена даже в разгар сезона.</p>
         <div class="location-points">
           <div class="location-point">
             <div class="location-point-icon">🏙️</div>
             <div>
-              <div class="location-point-label">До центра Батуми</div>
-              <div class="location-point-val">10 минут</div>
-              <div class="location-point-note">Без пробок в любой сезон</div>
+              <div class="location-point-label" data-i18n="loc1_l">До центра Батуми</div>
+              <div class="location-point-val" data-i18n="loc1_v">10 минут</div>
+              <div class="location-point-note" data-i18n="loc1_n">Без пробок в любой сезон</div>
             </div>
           </div>
           <div class="location-point">
             <div class="location-point-icon">✈️</div>
             <div>
-              <div class="location-point-label">До аэропорта</div>
-              <div class="location-point-val">15 минут</div>
-              <div class="location-point-note">Прямые рейсы в 20+ городов</div>
+              <div class="location-point-label" data-i18n="loc2_l">До аэропорта</div>
+              <div class="location-point-val" data-i18n="loc2_v">15 минут</div>
+              <div class="location-point-note" data-i18n="loc2_n">Прямые рейсы в 20+ городов</div>
             </div>
           </div>
           <div class="location-point">
             <div class="location-point-icon">🌊</div>
             <div>
-              <div class="location-point-label">До пляжа</div>
-              <div class="location-point-val">12 минут</div>
-              <div class="location-point-note">Лучшие пляжи Батуми</div>
+              <div class="location-point-label" data-i18n="loc3_l">До пляжа</div>
+              <div class="location-point-val" data-i18n="loc3_v">12 минут</div>
+              <div class="location-point-note" data-i18n="loc3_n">Лучшие пляжи Батуми</div>
             </div>
           </div>
         </div>
@@ -1095,15 +1114,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="panorama-side">
       <img src="assets/photos/view-from-the-fourth-floor.JPG" alt="Панорамный вид на море из виллы Батуми" loading="lazy">
       <div class="panorama-caption">
-        <h3>Потрясающий вид на старый город Батуми</h3>
-        <p>Черноморское побережье — со всех этажей</p>
+        <h3 data-i18n="pan1_h">Потрясающий вид на старый город Батуми</h3>
+        <p data-i18n="pan1_p">Черноморское побережье — со всех этажей</p>
       </div>
     </div>
     <div class="panorama-side">
       <img src="assets/photos/night-vie-from-the-jacuzzi.jpeg" alt="Ночной вид с джакузи" loading="lazy">
       <div class="panorama-caption">
-        <h3>Ночной вид с джакузи</h3>
-        <p>Батуми сияет под вами каждый вечер</p>
+        <h3 data-i18n="pan2_h">Ночной вид с джакузи</h3>
+        <p data-i18n="pan2_p">Батуми сияет под вами каждый вечер</p>
       </div>
     </div>
   </div>
@@ -1122,69 +1141,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="investment-header reveal">
       <div class="gold-line" style="margin:0 auto 16px;"></div>
-      <span class="section-label">Инвестиционное сравнение</span>
-      <h2 class="section-title">Батуми vs Сочи:<br>цифры говорят сами</h2>
-      <p class="section-sub" style="margin: 0 auto; text-align:center;">Аналогичная вилла 300 м² с бассейном и видом на море. Данные рынка 2024–2025.</p>
+      <span class="section-label" data-i18n="inv_label">Инвестиционное сравнение</span>
+      <h2 class="section-title" data-i18n="inv_title">Батуми vs Сочи:<br>цифры говорят сами</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align:center;" data-i18n="inv_sub">Аналогичная вилла 300 м² с бассейном и видом на море. Данные рынка 2024–2025.</p>
     </div>
     <div class="reveal" style="overflow-x:auto;">
       <table class="comparison-table">
         <thead>
           <tr>
-            <th style="width:200px;">Параметр</th>
-            <th class="highlight">Эта вилла — Батуми</th>
-            <th>Аналог в Сочи</th>
+            <th style="width:200px;" data-i18n="tbl_param">Параметр</th>
+            <th class="highlight" data-i18n="tbl_batumi">Эта вилла — Батуми</th>
+            <th data-i18n="tbl_sochi">Аналог в Сочи</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Стоимость покупки</td>
-            <td class="highlight"><span class="check">✓</span> <strong>$600–700K</strong></td>
-            <td class="muted-col">$2,0–3,1 млн</td>
+            <td data-i18n="trow1_p">Стоимость покупки</td>
+            <td class="highlight" data-i18n="trow1_b"><span class="check">✓</span> <strong>$600–700K</strong></td>
+            <td class="muted-col" data-i18n="trow1_s">$2,0–3,1 млн</td>
           </tr>
           <tr>
-            <td>Переплата vs Батуми</td>
-            <td class="highlight"><span class="check">✓</span> Базовая цена</td>
-            <td class="muted-col"><span class="cross">—</span> +$1,4–2,4 млн сверху</td>
+            <td data-i18n="trow2_p">Переплата vs Батуми</td>
+            <td class="highlight" data-i18n="trow2_b"><span class="check">✓</span> Базовая цена</td>
+            <td class="muted-col" data-i18n="trow2_s"><span class="cross">—</span> +$1,4–2,4 млн сверху</td>
           </tr>
           <tr>
-            <td>Налог на имущество ежегодно</td>
-            <td class="highlight"><span class="check">✓</span> <strong>0%</strong> — нет налога</td>
-            <td class="muted-col"><span class="cross">—</span> 2,5–3% (до $77K/год)</td>
+            <td data-i18n="trow3_p">Налог на имущество ежегодно</td>
+            <td class="highlight" data-i18n="trow3_b"><span class="check">✓</span> <strong>0%</strong> — нет налога</td>
+            <td class="muted-col" data-i18n="trow3_s"><span class="cross">—</span> 2,5–3% (до $77K/год)</td>
           </tr>
           <tr>
-            <td>Доходность краткосрочной аренды</td>
-            <td class="highlight"><span class="check">✓</span> 15–20% (море, горы)</td>
+            <td data-i18n="trow4_p">Доходность краткосрочной аренды</td>
+            <td class="highlight" data-i18n="trow4_b"><span class="check">✓</span> 15–20% (море, горы)</td>
             <td class="muted-col">5–12%</td>
           </tr>
           <tr>
-            <td>Рост цен рынка 2024–2025</td>
-            <td class="highlight"><span class="check">✓</span> <strong>+17%</strong> за год</td>
+            <td data-i18n="trow5_p">Рост цен рынка 2024–2025</td>
+            <td class="highlight" data-i18n="trow5_b"><span class="check">✓</span> <strong>+17%</strong> за год</td>
             <td class="muted-col">0–3%</td>
           </tr>
           <tr>
-            <td>Валютный риск / курсовая выгода</td>
-            <td class="highlight"><span class="check">✓</span> Лари стабилен. Покупка при текущем курсе рубля — уже +10–15% к стоимости через 2–4 месяца</td>
-            <td class="muted-col"><span class="cross">—</span> Рубль −20% за 2024 г. Актив дешевеет в $ без роста рынка</td>
+            <td data-i18n="trow6_p">Валютный риск / курсовая выгода</td>
+            <td class="highlight" data-i18n="trow6_b"><span class="check">✓</span> Лари стабилен. Покупка при текущем курсе рубля — уже +10–15% к стоимости через 2–4 месяца</td>
+            <td class="muted-col" data-i18n="trow6_s"><span class="cross">—</span> Рубль −20% за 2024 г. Актив дешевеет в $ без роста рынка</td>
           </tr>
           <tr>
-            <td>Политический риск / санкции</td>
-            <td class="highlight"><span class="check">✓</span> Низкий. Грузия вне санкций</td>
-            <td class="muted-col"><span class="cross">—</span> Высокий. Санкционный режим</td>
+            <td data-i18n="trow7_p">Политический риск / санкции</td>
+            <td class="highlight" data-i18n="trow7_b"><span class="check">✓</span> Низкий. Грузия вне санкций</td>
+            <td class="muted-col" data-i18n="trow7_s"><span class="cross">—</span> Высокий. Санкционный режим</td>
           </tr>
           <tr>
-            <td>ВНЖ через покупку</td>
-            <td class="highlight"><span class="check">✓</span> От $150K → ВНЖ Грузии</td>
-            <td class="muted-col">Кадастр от $308K, ограничения</td>
+            <td data-i18n="trow8_p">ВНЖ через покупку</td>
+            <td class="highlight" data-i18n="trow8_b"><span class="check">✓</span> От $150K → ВНЖ Грузии</td>
+            <td class="muted-col" data-i18n="trow8_s">Кадастр от $308K, ограничения</td>
           </tr>
           <tr>
-            <td>Регистрация сделки</td>
-            <td class="highlight"><span class="check">✓</span> 1 день, реестр Грузии</td>
-            <td class="muted-col">30–90 дней</td>
+            <td data-i18n="trow9_p">Регистрация сделки</td>
+            <td class="highlight" data-i18n="trow9_b"><span class="check">✓</span> 1 день, реестр Грузии</td>
+            <td class="muted-col" data-i18n="trow9_s">30–90 дней</td>
           </tr>
           <tr>
-            <td>Налог с продажи после 2 лет</td>
-            <td class="highlight"><span class="check">✓</span> <strong>0%</strong></td>
-            <td class="muted-col">НДФЛ 13–15%</td>
+            <td data-i18n="trow10_p">Налог с продажи после 2 лет</td>
+            <td class="highlight" data-i18n="trow10_b"><span class="check">✓</span> <strong>0%</strong></td>
+            <td class="muted-col" data-i18n="trow10_s">НДФЛ 13–15%</td>
           </tr>
         </tbody>
       </table>
@@ -1192,15 +1211,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="investment-conclusion reveal">
       <div>
         <div class="inv-metric">−$1,4M</div>
-        <div class="inv-label">Экономия vs аналога в Сочи</div>
+        <div class="inv-label" data-i18n="inv_m1">Экономия vs аналога в Сочи</div>
       </div>
       <div>
         <div class="inv-metric">+17%</div>
-        <div class="inv-label">Рост рынка Батуми за год</div>
+        <div class="inv-label" data-i18n="inv_m2">Рост рынка Батуми за год</div>
       </div>
       <div>
         <div class="inv-metric">$0</div>
-        <div class="inv-label">Налог на имущество ежегодно</div>
+        <div class="inv-label" data-i18n="inv_m3">Налог на имущество ежегодно</div>
       </div>
     </div>
   </div>
@@ -1212,42 +1231,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="rarity-wrap">
       <div class="reveal">
         <div class="gold-line"></div>
-        <span class="section-label">Редкость объекта</span>
-        <h2 class="section-title" style="margin-bottom:36px;">Что делает эту виллу<br>исключительной</h2>
+        <span class="section-label" data-i18n="rar_label">Редкость объекта</span>
+        <h2 class="section-title" style="margin-bottom:36px;" data-i18n="rar_title">Что делает эту виллу<br>исключительной</h2>
         <ul class="rarity-list">
           <li>
             <div class="rarity-mark">1</div>
             <div>
-              <h4>Панорама и море, и горы одновременно</h4>
-              <p>В большинстве домов — вид либо на море, либо на горы. Здесь оба. С каждого этажа.</p>
+              <h4 data-i18n="rar1_h">Панорама и море, и горы одновременно</h4>
+              <p data-i18n="rar1_p">В большинстве домов — вид либо на море, либо на горы. Здесь оба. С каждого этажа.</p>
             </div>
           </li>
           <li>
             <div class="rarity-mark">2</div>
             <div>
-              <h4>Тёплый пол в Батуми — редкость</h4>
-              <p>Большинство домов в Батуми не имеют отопления. Здесь газовый котёл 32 кВт и тёплый пол — дом всегда сухой и тёплый.</p>
+              <h4 data-i18n="rar2_h">Тёплый пол в Батуми — редкость</h4>
+              <p data-i18n="rar2_p">Большинство домов в Батуми не имеют отопления. Здесь газовый котёл 32 кВт и тёплый пол — дом всегда сухой и тёплый.</p>
             </div>
           </li>
           <li>
             <div class="rarity-mark">3</div>
             <div>
-              <h4>Травертиновый фасад ручной работы</h4>
-              <p>Натуральный камень снаружи, авторские акварели внутри — это не типовая стройка.</p>
+              <h4 data-i18n="rar3_h">Травертиновый фасад ручной работы</h4>
+              <p data-i18n="rar3_p">Натуральный камень снаружи, авторские акварели внутри — это не типовая стройка.</p>
             </div>
           </li>
           <li>
             <div class="rarity-mark">4</div>
             <div>
-              <h4>Никто никогда не жил</h4>
-              <p>Дом построен в 2024 году. Ни один жилец, ни одного дня эксплуатации. Первый владелец — вы.</p>
+              <h4 data-i18n="rar4_h">Никто никогда не жил</h4>
+              <p data-i18n="rar4_p">Дом построен в 2024 году. Ни один жилец, ни одного дня эксплуатации. Первый владелец — вы.</p>
             </div>
           </li>
           <li>
             <div class="rarity-mark">5</div>
             <div>
-              <h4>Полная автономность: вода, тепло, безопасность</h4>
-              <p>Резервный бак 500 л, газовый котёл, Smart Home с охраной и CCTV — всё под контролем с телефона.</p>
+              <h4 data-i18n="rar5_h">Полная автономность: вода, тепло, безопасность</h4>
+              <p data-i18n="rar5_p">Резервный бак 500 л, газовый котёл, Smart Home с охраной и CCTV — всё под контролем с телефона.</p>
             </div>
           </li>
         </ul>
@@ -1264,18 +1283,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="obj-header reveal">
       <div class="gold-line" style="margin:0 auto 16px;"></div>
-      <span class="section-label">Честные ответы</span>
-      <h2 class="section-title">Вопросы, которые<br>возникают всегда</h2>
+      <span class="section-label" data-i18n="obj_label">Честные ответы</span>
+      <h2 class="section-title" data-i18n="obj_title">Вопросы, которые<br>возникают всегда</h2>
     </div>
     <div class="accordion reveal">
 
       <div class="acc-item">
         <button class="acc-trigger" onclick="toggleAcc(this)">
-          <span>«Я не знаю, насколько это юридически безопасно»</span>
+          <span data-i18n="obj_q1">«Я не знаю, насколько это юридически безопасно»</span>
           <div class="acc-icon">+</div>
         </button>
         <div class="acc-body">
-          <div class="acc-body-inner">
+          <div class="acc-body-inner" data-i18n="obj_a1">
             Грузия — одна из наиболее прозрачных юрисдикций в регионе для покупки недвижимости. Объект <strong>зарегистрирован в Национальном реестре Грузии без обременений</strong>. Сделка оформляется у нотариуса, право собственности переходит в день оплаты. Вы получаете полный пакет документов. Мы покажем всё до подписания.
           </div>
         </div>
@@ -1283,11 +1302,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="acc-item">
         <button class="acc-trigger" onclick="toggleAcc(this)">
-          <span>«А кто будет следить за виллой, когда меня нет?»</span>
+          <span data-i18n="obj_q2">«А кто будет следить за виллой, когда меня нет?»</span>
           <div class="acc-icon">+</div>
         </button>
         <div class="acc-body">
-          <div class="acc-body-inner">
+          <div class="acc-body-inner" data-i18n="obj_a2">
             Smart Home решает 80% вопросов удалённо — климат, охрана, CCTV. <strong>Управление через смартфон из любой точки мира</strong>. Для физического обслуживания мы предлагаем <strong>сервис управления виллой</strong>: персональный сотрудник, регулярная чистка бассейна, круглосуточное видеонаблюдение. Автоматические ворота, сигнализация, CCTV — всё уже установлено.
           </div>
         </div>
@@ -1295,11 +1314,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="acc-item">
         <button class="acc-trigger" onclick="toggleAcc(this)">
-          <span>«Мне надо подумать»</span>
+          <span data-i18n="obj_q3">«Мне надо подумать»</span>
           <div class="acc-icon">+</div>
         </button>
         <div class="acc-body">
-          <div class="acc-body-inner">
+          <div class="acc-body-inner" data-i18n="obj_a3">
             Это нормально. Но «подумать» — это не «медлить». <strong>Мы предлагаем конкретный следующий шаг: персональный просмотр без давления и обязательств</strong>. Приедьте, посмотрите, задайте все вопросы. Мы покажем документы, посчитаем сценарии, проведём по каждому уголку. <strong>Сделка закрывается в один день и регистрируется в реестре Грузии.</strong> Решение — за вами. А хорошие объекты не ждут.
           </div>
         </div>
@@ -1315,45 +1334,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="legal-wrap">
       <div class="reveal">
         <div class="gold-line"></div>
-        <span class="section-label">Юридическая безопасность</span>
-        <h2 class="section-title" style="margin-bottom:36px;">Документы чистые.<br>Сделка прозрачная.</h2>
+        <span class="section-label" data-i18n="leg_label">Юридическая безопасность</span>
+        <h2 class="section-title" style="margin-bottom:36px;" data-i18n="leg_title">Документы чистые.<br>Сделка прозрачная.</h2>
         <div class="trust-items">
           <div class="trust-item">
             <div class="trust-icon">📋</div>
             <div>
-              <h4>Реестр Грузии</h4>
-              <p>Объект зарегистрирован в Национальном реестре без обременений и залогов.</p>
+              <h4 data-i18n="leg1_h">Реестр Грузии</h4>
+              <p data-i18n="leg1_p">Объект зарегистрирован в Национальном реестре без обременений и залогов.</p>
             </div>
           </div>
           <div class="trust-item">
             <div class="trust-icon">⚖️</div>
             <div>
-              <h4>Нотариальное оформление</h4>
-              <p>Сделка через нотариуса. Право собственности — в день оплаты.</p>
+              <h4 data-i18n="leg2_h">Нотариальное оформление</h4>
+              <p data-i18n="leg2_p">Сделка через нотариуса. Право собственности — в день оплаты.</p>
             </div>
           </div>
           <div class="trust-item">
             <div class="trust-icon">🌍</div>
             <div>
-              <h4>Иностранцам можно</h4>
-              <p>Законодательство Грузии разрешает гражданам любой страны владеть недвижимостью.</p>
+              <h4 data-i18n="leg3_h">Иностранцам можно</h4>
+              <p data-i18n="leg3_p">Законодательство Грузии разрешает гражданам любой страны владеть недвижимостью.</p>
             </div>
           </div>
           <div class="trust-item">
             <div class="trust-icon">⚡</div>
             <div>
-              <h4>Сделка закрывается в один день</h4>
-              <p>Право собственности переходит в день оплаты и регистрируется в реестре Грузии немедленно.</p>
+              <h4 data-i18n="leg4_h">Сделка закрывается в один день</h4>
+              <p data-i18n="leg4_p">Право собственности переходит в день оплаты и регистрируется в реестре Грузии немедленно.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="reveal reveal-delay-2">
         <div class="legal-quote">
-          <p>«Я хочу купить и пользоваться — без месяцев документооборота и сюрпризов после сделки.»</p>
-          <cite>— Именно так работает эта сделка</cite>
+          <p data-i18n="leg_quote">«Я хочу купить и пользоваться — без месяцев документооборота и сюрпризов после сделки.»</p>
+          <cite data-i18n="leg_cite">— Именно так работает эта сделка</cite>
           <br><br>
-          <p style="font-size:15px; font-style:normal; color:var(--text-muted); margin-top:20px; margin-bottom:0;">Мы предоставляем полный пакет: кадастровый план, выписку из реестра, технические паспорта, документы на собственность. Всё — до подписания договора.</p>
+          <p style="font-size:15px; font-style:normal; color:var(--text-muted); margin-top:20px; margin-bottom:0;" data-i18n="leg_note">Мы предоставляем полный пакет: кадастровый план, выписку из реестра, технические паспорта, документы на собственность. Всё — до подписания договора.</p>
         </div>
       </div>
     </div>
@@ -1365,41 +1384,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="cases-header reveal">
       <div class="gold-line" style="margin:0 auto 16px;"></div>
-      <span class="section-label">Сценарии использования</span>
-      <h2 class="section-title">Как эта вилла<br>работает для вас</h2>
+      <span class="section-label" data-i18n="cases_label">Сценарии использования</span>
+      <h2 class="section-title" data-i18n="cases_title">Как эта вилла<br>работает для вас</h2>
     </div>
     <div class="cases-grid">
       <div class="case-card reveal">
         <div class="case-num">I</div>
-        <h3>Семейная резиденция</h3>
-        <p>Ваш дом за границей. Место, куда семья приезжает отдыхать, праздновать, жить.</p>
+        <h3 data-i18n="case1_h">Семейная резиденция</h3>
+        <p data-i18n="case1_p">Ваш дом за границей. Место, куда семья приезжает отдыхать, праздновать, жить.</p>
         <ul class="case-points">
-          <li>Дети у бассейна, жена на террасе</li>
-          <li>Родители в гостях — места хватит всем</li>
-          <li>Свой адрес за рубежом</li>
-          <li>Батуми — 2 часа из Москвы, 3 из Ташкента</li>
+          <li data-i18n="case1_p1">Дети у бассейна, жена на террасе</li>
+          <li data-i18n="case1_p2">Родители в гостях — места хватит всем</li>
+          <li data-i18n="case1_p3">Свой адрес за рубежом</li>
+          <li data-i18n="case1_p4">Батуми — 2 часа из Москвы, 3 из Ташкента</li>
         </ul>
       </div>
       <div class="case-card reveal reveal-delay-1">
         <div class="case-num">II</div>
-        <h3>Второй дом / База</h3>
-        <p>Постоянное место, куда можно приехать в любой момент без бронирования и без ожиданий.</p>
+        <h3 data-i18n="case2_h">Второй дом / База</h3>
+        <p data-i18n="case2_p">Постоянное место, куда можно приехать в любой момент без бронирования и без ожиданий.</p>
         <ul class="case-points">
-          <li>Не номер, а свой дом</li>
-          <li>Личная мебель, личная атмосфера</li>
-          <li>Личный кабинет для работы удалённо</li>
-          <li>Грузия — налоговая гавань</li>
+          <li data-i18n="case2_p1">Не номер, а свой дом</li>
+          <li data-i18n="case2_p2">Личная мебель, личная атмосфера</li>
+          <li data-i18n="case2_p3">Личный кабинет для работы удалённо</li>
+          <li data-i18n="case2_p4">Грузия — налоговая гавань</li>
         </ul>
       </div>
       <div class="case-card reveal reveal-delay-2">
         <div class="case-num">III</div>
-        <h3>Премиум-актив</h3>
-        <p>Батуми — растущий рынок. Уникальный объект растёт в цене быстрее типовых апартаментов.</p>
+        <h3 data-i18n="case3_h">Премиум-актив</h3>
+        <p data-i18n="case3_p">Батуми — растущий рынок. Уникальный объект растёт в цене быстрее типовых апартаментов.</p>
         <ul class="case-points">
-          <li>Цены растут каждый год</li>
-          <li>Готова к сдаче в аренду посуточно</li>
-          <li>Премиум-сегмент = высокий чек аренды</li>
-          <li>Лучший объект = самый ликвидный</li>
+          <li data-i18n="case3_p1">Цены растут каждый год</li>
+          <li data-i18n="case3_p2">Готова к сдаче в аренду посуточно</li>
+          <li data-i18n="case3_p3">Премиум-сегмент = высокий чек аренды</li>
+          <li data-i18n="case3_p4">Лучший объект = самый ликвидный</li>
         </ul>
       </div>
     </div>
@@ -1411,58 +1430,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="tour-header reveal">
       <div class="gold-line" style="margin:0 auto 16px;"></div>
-      <span class="section-label">Тур по вилле</span>
-      <h2 class="section-title">Каждый уголок<br>продуман до деталей</h2>
+      <span class="section-label" data-i18n="tour_label">Тур по вилле</span>
+      <h2 class="section-title" data-i18n="tour_title">Каждый уголок<br>продуман до деталей</h2>
     </div>
   </div>
   <div class="tour-grid reveal">
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/hall3.JPG" alt="Гостиная" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Гостиная</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_living">Гостиная</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/kitchen.JPG" alt="Кухня" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Кухня</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_kitchen">Кухня</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/master-bedroom.JPG" alt="Главная спальня" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Главная спальня</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_master">Главная спальня</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/guest-room2.JPG" alt="Гостевая комната" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Гостевая комната</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_guest">Гостевая комната</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/office.JPG" alt="Кабинет" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Кабинет</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_office">Кабинет</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/staircase-house.JPG" alt="Лестница" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Лестница</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_staircase">Лестница</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/swimming-pool.JPG" alt="Бассейн" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Бассейн</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_pool">Бассейн</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/jacuzzi.jpeg" alt="Джакузи" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Джакузи</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_jacuzzi">Джакузи</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/view-from-the-fourth-floor.JPG" alt="Вид из дома" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Вид из дома</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_view">Вид из дома</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/House-View-from-the-yard2.JPG" alt="Двор" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Двор</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_yard">Двор</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/House-View-from-the-street.JPG" alt="Фасад" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Фасад из травертина</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_facade">Фасад из травертина</span></div>
     </div>
     <div class="tour-item">
       <img class="tour-img" src="assets/photos/best-night-view.jpeg" alt="Ночная панорама" loading="lazy">
-      <div class="tour-overlay"><span class="tour-label">Ночная панорама</span></div>
+      <div class="tour-overlay"><span class="tour-label" data-i18n="t_night">Ночная панорама</span></div>
     </div>
   </div>
 </section>
@@ -1472,24 +1491,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="fomo-glow"></div>
   <div class="container fomo-content">
     <div class="gold-line reveal" style="margin:0 auto 16px;"></div>
-    <span class="section-label reveal">Не откладывайте</span>
-    <h2 class="section-title reveal">Пока вы читаете это —<br>кто-то уже смотрит виллу</h2>
-    <p class="fomo-sub reveal">Вилла такого уровня — штучный объект. Когда она уйдёт — второй не будет. Хорошие решения принимают без спешки, но и без затяжного промедления.</p>
+    <span class="section-label reveal" data-i18n="fomo_label">Не откладывайте</span>
+    <h2 class="section-title reveal" data-i18n="fomo_title">Пока вы читаете это —<br>кто-то уже смотрит виллу</h2>
+    <p class="fomo-sub reveal" data-i18n="fomo_sub">Вилла такого уровня — штучный объект. Когда она уйдёт — второй не будет. Хорошие решения принимают без спешки, но и без затяжного промедления.</p>
     <div class="fomo-counter reveal">
       <div class="fomo-stat">
         <div class="fomo-num">1</div>
-        <div class="fomo-label-sm">Объект</div>
+        <div class="fomo-label-sm" data-i18n="fomo_stat1">Объект</div>
       </div>
       <div class="fomo-stat">
         <div class="fomo-num">0</div>
-        <div class="fomo-label-sm">Аналогов</div>
+        <div class="fomo-label-sm" data-i18n="fomo_stat2">Аналогов</div>
       </div>
       <div class="fomo-stat">
         <div class="fomo-num">292</div>
-        <div class="fomo-label-sm">м² готово к жизни</div>
+        <div class="fomo-label-sm" data-i18n="fomo_stat3">м² готово к жизни</div>
       </div>
     </div>
-    <a href="#contact" class="btn reveal" style="font-size:15px; padding:20px 48px;">Запросить персональный просмотр</a>
+    <a href="#contact" class="btn reveal" style="font-size:15px; padding:20px 48px;" data-i18n="fomo_cta">Запросить персональный просмотр</a>
   </div>
 </section>
 
@@ -1499,14 +1518,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="contact-grid">
       <div class="contact-left reveal">
         <div class="gold-line"></div>
-        <span class="section-label">Связаться с нами</span>
-        <div class="owner-badge" style="margin-bottom:16px;">★ Собственник · Без посредников</div>
-        <h2 class="section-title">Обсудите покупку<br>напрямую с владельцем</h2>
-        <p>Вилла продаётся собственником — без агентов и комиссий. Покажу объект лично, отвечу на все вопросы, предоставлю полный пакет документов.</p>
+        <span class="section-label" data-i18n="contact_label">Связаться с нами</span>
+        <div class="owner-badge" style="margin-bottom:16px;" data-i18n="contact_badge">★ Собственник · Без посредников</div>
+        <h2 class="section-title" data-i18n="contact_title">Обсудите покупку<br>напрямую с владельцем</h2>
+        <p data-i18n="contact_p">Вилла продаётся собственником — без агентов и комиссий. Покажу объект лично, отвечу на все вопросы, предоставлю полный пакет документов.</p>
         <div style="display:flex; align-items:center; gap:14px; margin-bottom:24px; padding:16px; background:var(--card); border-left:2px solid var(--gold);">
           <img src="assets/photos/Jeny.png" alt="Евгения" style="width:80px; height:80px; border-radius:50%; object-fit:cover; object-position:center 10%; border:2px solid var(--gold); flex-shrink:0;">
           <div>
-            <div style="font-size:17px; font-weight:600; margin-bottom:4px;">Евгения</div>
+            <div style="font-size:17px; font-weight:600; margin-bottom:4px;" data-i18n="evgenia_name">Евгения</div>
             <a href="tel:+995599005643" style="font-size:15px; color:var(--gold); text-decoration:none;">+995 599 005 643</a>
           </div>
         </div>
@@ -1516,8 +1535,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg viewBox="0 0 24 24" width="24" height="24" fill="#229ED9"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
             </div>
             <div>
-              <div class="contact-method-label" style="color:#229ED9;">Telegram — быстрее всего</div>
-              <div class="contact-method-val">Написать владельцу</div>
+              <div class="contact-method-label" style="color:#229ED9;" data-i18n="contact_tg_label">Telegram — быстрее всего</div>
+              <div class="contact-method-val" data-i18n="contact_tg_val">Написать владельцу</div>
             </div>
           </a>
           <a href="https://wa.me/995599005643?text=Здравствуйте!%20Хочу%20запросить%20просмотр%20виллы%20в%20Батуми." class="contact-method" target="_blank">
@@ -1525,8 +1544,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg viewBox="0 0 24 24" width="24" height="24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </div>
             <div>
-              <div class="contact-method-label">WhatsApp</div>
-              <div class="contact-method-val">Написать сейчас</div>
+              <div class="contact-method-label" data-i18n="contact_wa_label">WhatsApp</div>
+              <div class="contact-method-val" data-i18n="contact_wa_val">Написать сейчас</div>
             </div>
           </a>
           <a href="tel:+995599005643" class="contact-method">
@@ -1534,7 +1553,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg viewBox="0 0 24 24" width="24" height="24" fill="var(--gold)"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             </div>
             <div>
-              <div class="contact-method-label">Телефон</div>
+              <div class="contact-method-label" data-i18n="contact_ph_label">Телефон</div>
               <div class="contact-method-val">+995 599 005 643</div>
             </div>
           </a>
@@ -1543,7 +1562,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg viewBox="0 0 24 24" width="24" height="24" fill="var(--text-muted)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             </div>
             <div>
-              <div class="contact-method-label">Email</div>
+              <div class="contact-method-label" data-i18n="contact_em_label">Email</div>
               <div class="contact-method-val">mail@onthesea.ge</div>
             </div>
           </a>
@@ -1554,14 +1573,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="form-agent">
             <img src="assets/photos/Jeny.png" alt="Евгения" class="form-agent-photo">
             <div>
-              <div class="form-agent-name">Евгения</div>
+              <div class="form-agent-name" data-i18n="evgenia_name">Евгения</div>
               <a href="tel:+995599005643" class="form-agent-phone">+995 599 005 643</a>
             </div>
           </div>
-          <div class="form-title">Запрос на просмотр</div>
-          <div class="form-subtitle">Ответим в течение 2 часов</div>
+          <div class="form-title" data-i18n="form_title">Запрос на просмотр</div>
+          <div class="form-subtitle" data-i18n="form_subtitle">Ответим в течение 2 часов</div>
           <div class="form-phone-block">
-            <div class="form-phone-label">Позвоните прямо сейчас</div>
+            <div class="form-phone-label" data-i18n="form_phone_label">Позвоните прямо сейчас</div>
             <a href="tel:+995599005643" class="form-phone-number">+995 599 005 643</a>
             <div class="form-messenger-btns">
               <a href="https://t.me/+995599005643" class="form-msg-btn form-msg-btn-tg" target="_blank">
@@ -1574,31 +1593,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </a>
             </div>
           </div>
-          <div class="form-or-divider">или оставьте заявку</div>
+          <div class="form-or-divider" data-i18n="form_or">или оставьте заявку</div>
           <form id="viewingForm" onsubmit="submitForm(event)">
             <div class="form-group">
-              <label>Ваше имя *</label>
-              <input type="text" name="name" required placeholder="Александр">
+              <label data-i18n="form_name_label">Ваше имя *</label>
+              <input type="text" name="name" required placeholder="Александр" data-i18n-ph="form_name_ph">
             </div>
             <div class="form-group">
-              <label>WhatsApp / Телефон *</label>
+              <label data-i18n="form_phone_input_label">WhatsApp / Телефон *</label>
               <input type="tel" name="phone" required placeholder="+7 900 000 00 00">
             </div>
             <div class="form-group">
-              <label>Когда удобно?</label>
+              <label data-i18n="form_when_label">Когда удобно?</label>
               <select name="timing">
-                <option value="">Выберите</option>
-                <option>В ближайшую неделю</option>
-                <option>В течение месяца</option>
-                <option>Просто хочу узнать больше</option>
+                <option value="" data-i18n="form_opt0">Выберите</option>
+                <option data-i18n="form_opt1">В ближайшую неделю</option>
+                <option data-i18n="form_opt2">В течение месяца</option>
+                <option data-i18n="form_opt3">Просто хочу узнать больше</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Комментарий</label>
+              <label data-i18n="form_comment_label">Комментарий</label>
               <textarea name="message" placeholder="Ваш вопрос или пожелание..."></textarea>
             </div>
-            <button type="submit" class="btn form-submit">Отправить запрос</button>
-            <p class="form-privacy">Отправляя форму, вы соглашаетесь на обработку персональных данных. Мы не передаём данные третьим лицам.</p>
+            <button type="submit" class="btn form-submit" data-i18n="form_submit">Отправить запрос</button>
+            <p class="form-privacy" data-i18n="form_privacy">Отправляя форму, вы соглашаетесь на обработку персональных данных. Мы не передаём данные третьим лицам.</p>
           </form>
         </div>
       </div>
@@ -1610,8 +1629,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
   <div class="container">
     <div class="logo">seaside<span style="color:var(--gold)">house</span>.ge</div>
-    <p style="margin-top:12px;">Роскошная вилла в Батуми, Грузия · seasidehouse.ge</p>
-    <p style="margin-top:8px;">3-я улица, Ахалшенис Меурнеоба, Хелвачаурский муниципалитет, Аджария</p>
+    <p style="margin-top:12px;" data-i18n="footer_tagline">Роскошная вилла в Батуми, Грузия · seasidehouse.ge</p>
+    <p style="margin-top:8px;" data-i18n="footer_address">3-я улица, Ахалшенис Меурнеоба, Хелвачаурский муниципалитет, Аджария</p>
     <p style="margin-top:16px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
       <a href="tel:+995599005643" style="color:var(--gold); font-size:18px; font-weight:600; letter-spacing:0.04em; text-decoration:none;">+995 599 005 643</a>
       <a href="https://t.me/+995599005643" style="color:#229ED9; font-size:14px; text-decoration:none;" target="_blank">Telegram</a>
@@ -1698,6 +1717,304 @@ function submitForm(e) {
     `Здравствуйте! Запрос на просмотр виллы Seaside House.\n\nИмя: ${name}\nТелефон: ${phone}\nКогда: ${timing}\n${msg ? 'Комментарий: ' + msg : ''}`
   );
   window.open(`https://wa.me/995599005643?text=${text}`, '_blank');
+}
+
+// ── i18n ──
+const translations = {
+  ru: {
+    nav_gallery:'Галерея', nav_specs:'Характеристики', nav_invest:'Инвестиция', nav_contact:'Контакт',
+    header_cta:'Запросить просмотр',
+    hero_badge:'★ Продаёт собственник · Без посредников',
+    hero_eyebrow:'Батуми, Грузия · Батуми Ривьера',
+    hero_title:'Море. Горы.<br><em>Ваш дом.</em>',
+    hero_sub:'Готовая меблированная вилла 292 м² с панорамным видом на море и горы. Бассейн, Smart Home, тёплый пол. 10 минут до центра Батуми.',
+    hero_btn1:'Смотреть виллу', hero_btn2:'Написать владельцу', scroll:'Смотреть',
+    stat_area:'Площадь дома', stat_plot:'Площадь участка', stat_floors:'Жилых уровня', stat_city:'До центра',
+    pain_label:'Честный разговор',
+    pain_title:'Бизнес есть. Деньги есть.<br>Но всё ли у вас достаточно защищено?',
+    pain1_h:'Капитал и семья — в одной стране',
+    pain1_p:'Бизнес, деньги, семья — всё завязано на одну экономику, один курс валют, один сценарий. Это тревожит, даже если вслух не признавать.',
+    pain2_h:'Жена спрашивает: «А мы когда?»',
+    pain2_p:'Вы успешны. Но каждый отпуск — чужая вилла. Семья хочет своё место. Место, куда можно приехать и выдохнуть, а не оформлять аренду.',
+    pain3_h:'Хороший объект уходит быстро',
+    pain3_p:'Вы видели, как другие купили раньше и выиграли. Вы думали. Потом оказывалось — тот объект уже давно ушёл. Снова «подождём».',
+    pain_quote:'«Я уже заработал. Теперь хочу не просто квартиру, а место, где моя семья будет чувствовать себя спокойно, красиво и достойно.»',
+    sol_badge:'м² готово к жизни', sol_label:'Решение',
+    sol_title:'Это не просто вилла.<br>Это ваш личный <em class="gold">план Б</em>',
+    sol_sub:'В нашем мире, где правила меняются, вилла у моря — это не роскошь. Это тихое, уверенное решение для тех, кто думает на 10 лет вперёд.',
+    pil1_h:'Семейное убежище', pil1_p:'Место, где жена гордится, а дети хотят приезжать снова.',
+    pil2_h:'Безопасный актив', pil2_p:'Недвижимость в Грузии — спокойный актив. Надёжнее крипты, акций и кэша на счетах.',
+    pil3_h:'Второй дом за границей', pil3_p:'Не номер в отеле. Не аренда. Своё место. С видом на море, бассейном и тишиной.',
+    pil4_h:'Растущий рынок', pil4_p:'Батуми — один из самых быстрорастущих туристических рынков Европы. Цены идут вверх.',
+    gal_label:'Фотогалерея', gal_title:'Посмотрите на каждый<br>уголок этой виллы',
+    specs_label:'Характеристики', specs_title:'Всё, что важно —<br>в одном объекте',
+    spec_area:'Площадь дома', spec_plot:'Площадь участка', spec_floors:'Жилых уровня',
+    spec_beds:'Спален', spec_baths:'Санузла', spec_pool_l:'Собственный',
+    spec_sauna_l:'Финская, собственная', spec_sh_l:'Климат, охрана, CCTV',
+    spec_park_sub:'на три авто', spec_park_l:'Закрытая, своя', spec_heat_l:'Газовый котёл 32 кВт',
+    specs_note:'<strong>Полностью меблирована и готова к заселению.</strong> В доме никто никогда не жил. Авторский дизайн-проект, техника MIDEA, травертиновый фасад, автоматические ворота, резервный накопитель воды 500 л. Ничего не нужно докупать.',
+    loc_label:'Локация', loc_title:'10 минут до центра.<br>Без пробок.',
+    loc_sub:'Батуми Ривьера — возвышенный экологически чистый район над морем. Вид на море, вид на горы. Высота гарантирует открытую панораму. Дорога до центра не перегружена даже в разгар сезона.',
+    loc1_l:'До центра Батуми', loc1_v:'10 минут', loc1_n:'Без пробок в любой сезон',
+    loc2_l:'До аэропорта', loc2_v:'15 минут', loc2_n:'Прямые рейсы в 20+ городов',
+    loc3_l:'До пляжа', loc3_v:'12 минут', loc3_n:'Лучшие пляжи Батуми',
+    pan1_h:'Потрясающий вид на старый город Батуми', pan1_p:'Черноморское побережье — со всех этажей',
+    pan2_h:'Ночной вид с джакузи', pan2_p:'Батуми сияет под вами каждый вечер',
+    inv_label:'Инвестиционное сравнение',
+    inv_title:'Батуми vs Сочи:<br>цифры говорят сами',
+    inv_sub:'Аналогичная вилла 300 м² с бассейном и видом на море. Данные рынка 2024–2025.',
+    tbl_param:'Параметр', tbl_batumi:'Эта вилла — Батуми', tbl_sochi:'Аналог в Сочи',
+    trow1_p:'Стоимость покупки',
+    trow1_b:'<span class="check">✓</span> <strong>$600–700K</strong>',
+    trow1_s:'$2,0–3,1 млн',
+    trow2_p:'Переплата vs Батуми',
+    trow2_b:'<span class="check">✓</span> Базовая цена',
+    trow2_s:'<span class="cross">—</span> +$1,4–2,4 млн сверху',
+    trow3_p:'Налог на имущество ежегодно',
+    trow3_b:'<span class="check">✓</span> <strong>0%</strong> — нет налога',
+    trow3_s:'<span class="cross">—</span> 2,5–3% (до $77K/год)',
+    trow4_p:'Доходность краткосрочной аренды',
+    trow4_b:'<span class="check">✓</span> 15–20% (море, горы)',
+    trow5_p:'Рост цен рынка 2024–2025',
+    trow5_b:'<span class="check">✓</span> <strong>+17%</strong> за год',
+    trow6_p:'Валютный риск / курсовая выгода',
+    trow6_b:'<span class="check">✓</span> Лари стабилен. Покупка при текущем курсе рубля — уже +10–15% к стоимости через 2–4 месяца',
+    trow6_s:'<span class="cross">—</span> Рубль −20% за 2024 г. Актив дешевеет в $ без роста рынка',
+    trow7_p:'Политический риск / санкции',
+    trow7_b:'<span class="check">✓</span> Низкий. Грузия вне санкций',
+    trow7_s:'<span class="cross">—</span> Высокий. Санкционный режим',
+    trow8_p:'ВНЖ через покупку',
+    trow8_b:'<span class="check">✓</span> От $150K → ВНЖ Грузии',
+    trow8_s:'Кадастр от $308K, ограничения',
+    trow9_p:'Регистрация сделки',
+    trow9_b:'<span class="check">✓</span> 1 день, реестр Грузии',
+    trow9_s:'30–90 дней',
+    trow10_p:'Налог с продажи после 2 лет',
+    trow10_b:'<span class="check">✓</span> <strong>0%</strong>',
+    trow10_s:'НДФЛ 13–15%',
+    inv_m1:'Экономия vs аналога в Сочи', inv_m2:'Рост рынка Батуми за год', inv_m3:'Налог на имущество ежегодно',
+    rar_label:'Редкость объекта', rar_title:'Что делает эту виллу<br>исключительной',
+    rar1_h:'Панорама и море, и горы одновременно',
+    rar1_p:'В большинстве домов — вид либо на море, либо на горы. Здесь оба. С каждого этажа.',
+    rar2_h:'Тёплый пол в Батуми — редкость',
+    rar2_p:'Большинство домов в Батуми не имеют отопления. Здесь газовый котёл 32 кВт и тёплый пол — дом всегда сухой и тёплый.',
+    rar3_h:'Травертиновый фасад ручной работы',
+    rar3_p:'Натуральный камень снаружи, авторские акварели внутри — это не типовая стройка.',
+    rar4_h:'Никто никогда не жил',
+    rar4_p:'Дом построен в 2024 году. Ни один жилец, ни одного дня эксплуатации. Первый владелец — вы.',
+    rar5_h:'Полная автономность: вода, тепло, безопасность',
+    rar5_p:'Резервный бак 500 л, газовый котёл, Smart Home с охраной и CCTV — всё под контролем с телефона.',
+    obj_label:'Честные ответы', obj_title:'Вопросы, которые<br>возникают всегда',
+    obj_q1:'«Я не знаю, насколько это юридически безопасно»',
+    obj_a1:'Грузия — одна из наиболее прозрачных юрисдикций в регионе для покупки недвижимости. Объект <strong>зарегистрирован в Национальном реестре Грузии без обременений</strong>. Сделка оформляется у нотариуса, право собственности переходит в день оплаты. Вы получаете полный пакет документов. Мы покажем всё до подписания.',
+    obj_q2:'«А кто будет следить за виллой, когда меня нет?»',
+    obj_a2:'Smart Home решает 80% вопросов удалённо — климат, охрана, CCTV. <strong>Управление через смартфон из любой точки мира</strong>. Для физического обслуживания мы предлагаем <strong>сервис управления виллой</strong>: персональный сотрудник, регулярная чистка бассейна, круглосуточное видеонаблюдение. Автоматические ворота, сигнализация, CCTV — всё уже установлено.',
+    obj_q3:'«Мне надо подумать»',
+    obj_a3:'Это нормально. Но «подумать» — это не «медлить». <strong>Мы предлагаем конкретный следующий шаг: персональный просмотр без давления и обязательств</strong>. Приедьте, посмотрите, задайте все вопросы. Мы покажем документы, посчитаем сценарии, проведём по каждому уголку. <strong>Сделка закрывается в один день и регистрируется в реестре Грузии.</strong> Решение — за вами. А хорошие объекты не ждут.',
+    leg_label:'Юридическая безопасность', leg_title:'Документы чистые.<br>Сделка прозрачная.',
+    leg1_h:'Реестр Грузии', leg1_p:'Объект зарегистрирован в Национальном реестре без обременений и залогов.',
+    leg2_h:'Нотариальное оформление', leg2_p:'Сделка через нотариуса. Право собственности — в день оплаты.',
+    leg3_h:'Иностранцам можно', leg3_p:'Законодательство Грузии разрешает гражданам любой страны владеть недвижимостью.',
+    leg4_h:'Сделка закрывается в один день', leg4_p:'Право собственности переходит в день оплаты и регистрируется в реестре Грузии немедленно.',
+    leg_quote:'«Я хочу купить и пользоваться — без месяцев документооборота и сюрпризов после сделки.»',
+    leg_cite:'— Именно так работает эта сделка',
+    leg_note:'Мы предоставляем полный пакет: кадастровый план, выписку из реестра, технические паспорта, документы на собственность. Всё — до подписания договора.',
+    cases_label:'Сценарии использования', cases_title:'Как эта вилла<br>работает для вас',
+    case1_h:'Семейная резиденция', case1_p:'Ваш дом за границей. Место, куда семья приезжает отдыхать, праздновать, жить.',
+    case1_p1:'Дети у бассейна, жена на террасе', case1_p2:'Родители в гостях — места хватит всем',
+    case1_p3:'Свой адрес за рубежом', case1_p4:'Батуми — 2 часа из Москвы, 3 из Ташкента',
+    case2_h:'Второй дом / База', case2_p:'Постоянное место, куда можно приехать в любой момент без бронирования и без ожиданий.',
+    case2_p1:'Не номер, а свой дом', case2_p2:'Личная мебель, личная атмосфера',
+    case2_p3:'Личный кабинет для работы удалённо', case2_p4:'Грузия — налоговая гавань',
+    case3_h:'Премиум-актив', case3_p:'Батуми — растущий рынок. Уникальный объект растёт в цене быстрее типовых апартаментов.',
+    case3_p1:'Цены растут каждый год', case3_p2:'Готова к сдаче в аренду посуточно',
+    case3_p3:'Премиум-сегмент = высокий чек аренды', case3_p4:'Лучший объект = самый ликвидный',
+    tour_label:'Тур по вилле', tour_title:'Каждый уголок<br>продуман до деталей',
+    t_living:'Гостиная', t_kitchen:'Кухня', t_master:'Главная спальня', t_guest:'Гостевая комната',
+    t_office:'Кабинет', t_staircase:'Лестница', t_pool:'Бассейн', t_jacuzzi:'Джакузи',
+    t_view:'Вид из дома', t_yard:'Двор', t_facade:'Фасад из травертина', t_night:'Ночная панорама',
+    fomo_label:'Не откладывайте',
+    fomo_title:'Пока вы читаете это —<br>кто-то уже смотрит виллу',
+    fomo_sub:'Вилла такого уровня — штучный объект. Когда она уйдёт — второй не будет. Хорошие решения принимают без спешки, но и без затяжного промедления.',
+    fomo_stat1:'Объект', fomo_stat2:'Аналогов', fomo_stat3:'м² готово к жизни',
+    fomo_cta:'Запросить персональный просмотр',
+    contact_label:'Связаться с нами', contact_badge:'★ Собственник · Без посредников',
+    contact_title:'Обсудите покупку<br>напрямую с владельцем',
+    contact_p:'Вилла продаётся собственником — без агентов и комиссий. Покажу объект лично, отвечу на все вопросы, предоставлю полный пакет документов.',
+    evgenia_name:'Евгения',
+    contact_tg_label:'Telegram — быстрее всего', contact_tg_val:'Написать владельцу',
+    contact_wa_label:'WhatsApp', contact_wa_val:'Написать сейчас',
+    contact_ph_label:'Телефон', contact_em_label:'Email',
+    form_title:'Запрос на просмотр', form_subtitle:'Ответим в течение 2 часов',
+    form_phone_label:'Позвоните прямо сейчас', form_or:'или оставьте заявку',
+    form_name_label:'Ваше имя *', form_phone_input_label:'WhatsApp / Телефон *',
+    form_when_label:'Когда удобно?', form_opt0:'Выберите',
+    form_opt1:'В ближайшую неделю', form_opt2:'В течение месяца', form_opt3:'Просто хочу узнать больше',
+    form_comment_label:'Комментарий', form_submit:'Отправить запрос',
+    form_privacy:'Отправляя форму, вы соглашаетесь на обработку персональных данных. Мы не передаём данные третьим лицам.',
+    footer_tagline:'Роскошная вилла в Батуми, Грузия · seasidehouse.ge',
+    footer_address:'3-я улица, Ахалшенис Меурнеоба, Хелвачаурский муниципалитет, Аджария'
+  },
+  en: {
+    nav_gallery:'Gallery', nav_specs:'Specs', nav_invest:'Investment', nav_contact:'Contact',
+    header_cta:'Request a Viewing',
+    hero_badge:'★ Direct from Owner · No Agents',
+    hero_eyebrow:'Batumi, Georgia · Batumi Riviera',
+    hero_title:'Sea. Mountains.<br><em>Your Home.</em>',
+    hero_sub:'Fully furnished villa, 292 m², panoramic sea and mountain views. Private pool, Smart Home, underfloor heating. 10 minutes from central Batumi.',
+    hero_btn1:'View the Villa', hero_btn2:'Message the Owner', scroll:'Scroll',
+    stat_area:'Living Area', stat_plot:'Plot Size', stat_floors:'Levels', stat_city:'To the Centre',
+    pain_label:'An Honest Conversation',
+    pain_title:"You've built success.<br>But is everything truly protected?",
+    pain1_h:'Capital and family tied to one country',
+    pain1_p:"Your business, money, and family are all bound to one economy, one currency, one set of risks. It worries you — even if you don't say it out loud.",
+    pain2_h:"Your wife asks: 'When do we get ours?'",
+    pain2_p:"You've worked hard. But every holiday is someone else's villa. Your family wants a place of your own — somewhere to arrive and breathe, not book.",
+    pain3_h:"The best properties don't wait",
+    pain3_p:"You've watched others buy earlier and win. You waited. By the time you decided, that property was gone. Another 'let's think about it.'",
+    pain_quote:'"I\'ve made it. Now I want more than a flat — a place where my family feels at ease, comfortable, and proud."',
+    sol_badge:'m² ready to move in', sol_label:'The Answer',
+    sol_title:'This isn\'t just a villa.<br>This is your personal <em class="gold">Plan B</em>',
+    sol_sub:"In a world where the rules keep changing, a villa by the sea isn't a luxury. It's a quiet, confident move for those thinking ten years ahead.",
+    pil1_h:'Family sanctuary', pil1_p:'A place your wife is proud of and your children always want to come back to.',
+    pil2_h:'A secure asset', pil2_p:'Georgian real estate is steady and dependable — more reliable than crypto, equities, or cash in accounts.',
+    pil3_h:'Your second home abroad', pil3_p:'Not a hotel room. Not a rental. Your own place — with sea views, a pool, and quiet.',
+    pil4_h:'A growing market', pil4_p:'Batumi is one of the fastest-growing tourism markets in Europe. Prices rise every year.',
+    gal_label:'Photo Gallery', gal_title:'See every corner<br>of this villa',
+    specs_label:'Specifications', specs_title:'Everything that matters —<br>in one property',
+    spec_area:'Living Area', spec_plot:'Plot Size', spec_floors:'Levels',
+    spec_beds:'Bedrooms', spec_baths:'Bathrooms', spec_pool_l:'Private Pool',
+    spec_sauna_l:'Finnish, Private', spec_sh_l:'Climate, Security, CCTV',
+    spec_park_sub:'for three cars', spec_park_l:'Enclosed Parking', spec_heat_l:'32 kW Gas Boiler',
+    specs_note:'<strong>Fully furnished and move-in ready.</strong> Never lived in. Custom interior design, MIDEA appliances, travertine facade, automatic gates, 500 L backup water tank. Nothing left to buy.',
+    loc_label:'Location', loc_title:'10 minutes to the centre.<br>No traffic.',
+    loc_sub:'Batumi Riviera is an elevated, ecologically clean neighbourhood above the sea. Views of both sea and mountains. The altitude guarantees an open panorama. The road to the centre is clear even at the height of the season.',
+    loc1_l:'To central Batumi', loc1_v:'10 minutes', loc1_n:'Clear roads in any season',
+    loc2_l:'To the airport', loc2_v:'15 minutes', loc2_n:'Direct flights to 20+ cities',
+    loc3_l:'To the beach', loc3_v:'12 minutes', loc3_n:"Batumi's finest beaches",
+    pan1_h:"Sweeping views of Batumi's old town", pan1_p:'The Black Sea coast — from every floor',
+    pan2_h:'Evening views from the jacuzzi', pan2_p:'Batumi glitters below you every night',
+    inv_label:'Investment Comparison',
+    inv_title:'Batumi vs Sochi:<br>the numbers speak',
+    inv_sub:'Comparable villa, 300 m², with pool and sea views. Market data 2024–2025.',
+    tbl_param:'Parameter', tbl_batumi:'This Villa — Batumi', tbl_sochi:'Equivalent in Sochi',
+    trow1_p:'Purchase Price',
+    trow1_b:'<span class="check">✓</span> <strong>$600–700K</strong>',
+    trow1_s:'$2.0–3.1M',
+    trow2_p:'Premium vs Batumi',
+    trow2_b:'<span class="check">✓</span> Base price',
+    trow2_s:'<span class="cross">—</span> +$1.4–2.4M on top',
+    trow3_p:'Annual Property Tax',
+    trow3_b:'<span class="check">✓</span> <strong>0%</strong> — no tax',
+    trow3_s:'<span class="cross">—</span> 2.5–3% (up to $77K/year)',
+    trow4_p:'Short-term Rental Yield',
+    trow4_b:'<span class="check">✓</span> 15–20% (sea &amp; mountains)',
+    trow5_p:'Market Price Growth 2024–2025',
+    trow5_b:'<span class="check">✓</span> <strong>+17%</strong> per year',
+    trow6_p:'Currency Risk / Exchange Gain',
+    trow6_b:'<span class="check">✓</span> Lari is stable. Buying at the current ruble rate means +10–15% appreciation within 2–4 months',
+    trow6_s:'<span class="cross">—</span> Ruble −20% in 2024. Asset loses dollar value without market growth',
+    trow7_p:'Political Risk / Sanctions',
+    trow7_b:'<span class="check">✓</span> Low. Georgia outside sanctions',
+    trow7_s:'<span class="cross">—</span> High. Sanctions regime',
+    trow8_p:'Residency via Purchase',
+    trow8_b:'<span class="check">✓</span> From $150K → Georgian Residency',
+    trow8_s:'Cadastral value $308K+, restrictions',
+    trow9_p:'Transaction Registration',
+    trow9_b:'<span class="check">✓</span> 1 day, Georgian Registry',
+    trow9_s:'30–90 days',
+    trow10_p:'Resale Tax After 2 Years',
+    trow10_b:'<span class="check">✓</span> <strong>0%</strong>',
+    trow10_s:'Income Tax 13–15%',
+    inv_m1:'Saved vs equivalent in Sochi', inv_m2:'Batumi market growth year-on-year', inv_m3:'Annual property tax',
+    rar_label:'Object Rarity', rar_title:'What makes this villa<br>exceptional',
+    rar1_h:'Sea AND mountain panorama — simultaneously',
+    rar1_p:'Most homes offer either sea or mountain views. Here, you get both. From every floor.',
+    rar2_h:'Underfloor heating — rare in Batumi',
+    rar2_p:'Most homes in Batumi have no heating. This one has a 32 kW gas boiler and underfloor heating throughout — always dry and warm.',
+    rar3_h:'Handcrafted travertine facade',
+    rar3_p:'Natural stone outside, original watercolours inside — this is not typical construction.',
+    rar4_h:'Never been lived in',
+    rar4_p:'Built in 2024. Not a single resident, not a single day of occupancy. The first owner will be you.',
+    rar5_h:'Fully self-sufficient: water, heat, security',
+    rar5_p:'500 L backup tank, gas boiler, Smart Home with alarm and CCTV — all controlled from your phone.',
+    obj_label:'Honest Answers', obj_title:'Questions that always come up',
+    obj_q1:'"I\'m not sure how secure this is legally"',
+    obj_a1:'Georgia is one of the most transparent property markets in the region. The property is <strong>registered in the Georgian National Registry with no encumbrances</strong>. The transaction is handled by a notary, and ownership transfers on the day of payment. You receive the full documentation package. We show you everything before signing.',
+    obj_q2:'"Who looks after the villa when I\'m not there?"',
+    obj_a2:'Smart Home handles 80% of questions remotely — climate, security, CCTV. <strong>Managed from your smartphone, anywhere in the world.</strong> For physical maintenance, we offer a <strong>villa management service</strong>: a dedicated staff member, regular pool cleaning, 24/7 video surveillance. Automatic gates, alarm, CCTV — all already installed.',
+    obj_q3:'"I need to think about it"',
+    obj_a3:"Completely fair. But thinking it over isn't the same as waiting indefinitely. <strong>We offer a clear next step: a personal viewing, no pressure, no obligation.</strong> Come, see the place, ask every question you have. We'll walk you through each room and show you the documents. <strong>The transaction closes in one day and is registered in the Georgian Registry.</strong> The decision is yours. But good properties don't wait.",
+    leg_label:'Legal Security', leg_title:'Clean title.<br>Transparent transaction.',
+    leg1_h:'Georgian National Registry', leg1_p:'The property is registered in the National Registry with no encumbrances or liens.',
+    leg2_h:'Notarial transaction', leg2_p:'Handled by a notary. Ownership transfers on the day of payment.',
+    leg3_h:'Open to foreign buyers', leg3_p:'Georgian law permits citizens of any country to own property.',
+    leg4_h:'Closes in one day', leg4_p:'Ownership transfers on the day of payment and is registered in the Georgian Registry immediately.',
+    leg_quote:'"I want to buy and use it — with no months of paperwork and no surprises after closing."',
+    leg_cite:'— That is exactly how this transaction works',
+    leg_note:'We provide the full package: cadastral plan, registry extract, technical passports, ownership documents. Everything — before you sign.',
+    cases_label:'Use Cases', cases_title:'How this villa<br>works for you',
+    case1_h:'Family Residence', case1_p:'Your home abroad. The place your family comes to rest, celebrate, and live.',
+    case1_p1:'Kids at the pool, your wife on the terrace', case1_p2:'Parents visiting — plenty of room for everyone',
+    case1_p3:'Your own address overseas', case1_p4:'Batumi — 2 hours from Moscow, 3 from Tashkent',
+    case2_h:'Second Home / Base', case2_p:'A permanent place you can arrive at any moment — no booking, no waiting.',
+    case2_p1:'Not a hotel room — your own home', case2_p2:'Your furniture, your atmosphere',
+    case2_p3:'Private office for remote work', case2_p4:'Georgia — a tax-friendly jurisdiction',
+    case3_h:'Premium Asset', case3_p:'Batumi is a growing market. A unique property appreciates faster than standard apartments.',
+    case3_p1:'Prices rise every year', case3_p2:'Ready for short-term rental',
+    case3_p3:'Premium segment = premium rental rates', case3_p4:'Best property = most liquid',
+    tour_label:'Villa Tour', tour_title:'Every corner<br>thought through in detail',
+    t_living:'Living Room', t_kitchen:'Kitchen', t_master:'Master Bedroom', t_guest:'Guest Room',
+    t_office:'Study', t_staircase:'Staircase', t_pool:'Pool', t_jacuzzi:'Jacuzzi',
+    t_view:'Views from the Villa', t_yard:'Garden', t_facade:'Travertine Facade', t_night:'Night Panorama',
+    fomo_label:"Don't Wait",
+    fomo_title:"While you're reading this —<br>someone is already viewing the villa",
+    fomo_sub:"A villa of this calibre is a one-of-a-kind property. Once it's gone, there won't be another. Good decisions are made without rushing — but without indefinite delay either.",
+    fomo_stat1:'Property', fomo_stat2:'Alternatives', fomo_stat3:'m² ready to move in',
+    fomo_cta:'Request a Personal Viewing',
+    contact_label:'Get in Touch', contact_badge:'★ Direct from Owner · No Agents',
+    contact_title:'Discuss the purchase<br>directly with the owner',
+    contact_p:'The villa is sold by the owner — no agents, no commission. I\'ll show you the property personally, answer all your questions, and provide the full documentation package.',
+    evgenia_name:'Evgenia',
+    contact_tg_label:'Telegram — fastest', contact_tg_val:'Message the owner',
+    contact_wa_label:'WhatsApp', contact_wa_val:'Message now',
+    contact_ph_label:'Phone', contact_em_label:'Email',
+    form_title:'Request a Viewing', form_subtitle:'We respond within 2 hours',
+    form_phone_label:'Call right now', form_or:'or leave a request',
+    form_name_label:'Your name *', form_phone_input_label:'WhatsApp / Phone *',
+    form_when_label:'When works for you?', form_opt0:'Select',
+    form_opt1:'Within the next week', form_opt2:'Within a month', form_opt3:'Just want to know more',
+    form_comment_label:'Comment', form_submit:'Send Request',
+    form_privacy:'By submitting this form, you agree to the processing of your personal data. We do not share data with third parties.',
+    footer_tagline:'Luxury villa in Batumi, Georgia · seasidehouse.ge',
+    footer_address:'3rd Street, Akhalshen District, Khelvachauri Municipality, Adjara'
+  }
+};
+
+let currentLang = 'ru';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  // Update page title and meta description
+  if (lang === 'en') {
+    document.title = 'Seaside House — Luxury Villa in Batumi';
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.content = 'Fully furnished villa, 292 m², panoramic sea and mountain views in Batumi. Private pool, Smart Home, underfloor heating. 10 minutes to the centre.';
+  } else {
+    document.title = 'Seaside House — Роскошная вилла в Батуми';
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.content = 'Готовая меблированная вилла 292 м² с панорамным видом на море и горы в Батуми. Бассейн, Smart Home, тёплый пол. 10 минут до центра.';
+  }
+  // Toggle active button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+  });
 }
 
 // ── Pretext for headings ──
